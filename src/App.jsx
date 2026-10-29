@@ -1,19 +1,8 @@
 import { useState } from "react"
+import { NewTodoForm } from "./NewTodoForm"
 
 export default function App() {
-  const [newItem, setNewItem] = useState("")
   const [todos, setTodos] = useState([]) //both of these rerender the app
-
-  function handleSubmit(e) {
-    e.preventDefault() //prevents page from refreshing
-
-    setTodos((currentTodos) => {
-      return [
-        ...currentTodos, {id: crypto.randomUUID(), title: newItem, completed:false}
-      ] //spread out, gives new array, brackets are new value
-    })
-    setNewItem("")
-  }
 
   function toggleTodo(id, completed) {
     setTodos(currentTodos => {
@@ -27,6 +16,15 @@ export default function App() {
   }
   //Make sure when changing state, make sure you don't mutate it, but create a new state object
 
+  function addTodo(title){
+    setTodos((currentTodos) => {
+          return [
+            ...currentTodos, 
+            {id: crypto.randomUUID(), title, completed:false}
+          ] //spread out, gives new array, brackets are new value
+            })
+  }
+
   function deleteTodo(id){
     setTodos(currentTodos => {
       return currentTodos.filter(todo => todo.id !== id)
@@ -34,19 +32,10 @@ export default function App() {
   }
 
   //Use keys if you need to edit or delete an item, react needs to know which one to change
+  //onSubmit={addTodo} is a prop
   return (
     <>
-      <form onSubmit={handleSubmit} className="new-item-form">
-        <div className="form-row">
-            <label htmlFor="item">New Item</label>
-            <input 
-              value={newItem} onChange={e => setNewItem(e.target.value)} 
-              type="text" 
-              id="item"
-            />
-        </div>
-      <button className="btn">Add</button>
-    </form>
+    <NewTodoForm onSubmit={addTodo} />
     <h1 className="header">ToDo List</h1>
     <ul className="list">
       {todos.length === 0 && "No Todos"}
