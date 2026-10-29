@@ -1,3 +1,16 @@
+html {
+  --primaryBackgroundColor: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
+  --primaryTextColor: azure;
+}
+
+@media (prefers-color-scheme: light){
+    
+    body{
+        background-image: linear-gradient(to top left, rgb(218, 211, 255), rgb(121, 102, 226));
+    }
+}
+
+
 body {
     /* background-color:rgb(35, 33, 43); */
     background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
