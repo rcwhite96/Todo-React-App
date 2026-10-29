@@ -11,7 +11,7 @@ export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
         </label>
         <button 
             onClick={() => deleteTodo(id)} 
-        className="btn btn-danger">
+        className="btn btn-danger" class="delete-button">
             Delete
         </button>
     </li>

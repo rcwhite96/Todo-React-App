@@ -23,7 +23,7 @@ export default function App() {
         if (todo.id === id){
           return {...todo, completed}
         }
-        return todo(id)
+        return todo
       })
     })
   }
@@ -48,9 +48,9 @@ export default function App() {
   //onSubmit={addTodo} is a prop
   return (
     <>
-    <NewTodoForm onSubmit={addTodo} />
     <h1 className="header">ToDo List</h1>
+    <NewTodoForm onSubmit={addTodo} />
     <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-  </>
+    </>
   )
 }
