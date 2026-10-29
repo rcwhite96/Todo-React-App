@@ -1,5 +1,7 @@
 body {
-    background-color:rgb(35, 33, 43);
+    /* background-color:rgb(35, 33, 43); */
+    background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
+    margin: 30%;
 }
 
 h1{
@@ -29,7 +31,6 @@ ul {
 div {
     text-align:center;
     background-color: rgb(98, 89, 139);
-    margin: 15%;
     border-radius: 20px;
 }
 
