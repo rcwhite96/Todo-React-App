@@ -1,5 +1,5 @@
 #light div {
-    background-color: rgb(219, 173, 230);
+    background-color: rgb(245, 236, 247);
 }
 
 #dark div {
@@ -7,29 +7,39 @@
 }
 
 #dark body {
-    background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175))
+    background-image: linear-gradient(to top left, rgb(19, 10, 66), rgb(131, 90, 185))
 }
 
 #light body {
-    background-image: linear-gradient(to top left, rgb(245, 165, 231), rgb(231, 218, 255))
+    background-image: linear-gradient(to top left, rgb(245, 165, 231), rgb(202, 230, 255))
 }
 
 .light-dark{
     padding: 0% 0% 0% 46%;
     border-radius: 20px;
-
+    
 }
 
  body{
     width: 100%;
     min-height: 100dvh;
     margin: 0px;
+    
 } 
 
 #root {
     padding: 0% 0% 0% 0%;
     border-radius: 20px;
-    margin: 15%
+    margin: 15%;
+
+}
+
+#light #root {
+    box-shadow: 4px 6px 10px rgb(69, 64, 102);
+}
+
+#dark #root {
+    box-shadow: 4px 6px 10px rgb(22, 17, 56);
 }
 
 h1{
@@ -76,6 +86,7 @@ ul {
     text-align:center;
     background-color: aqua;
     margin: 10% 10% 0% 10%
+    
 }
 
 
@@ -99,7 +110,12 @@ button:hover{
 }
 
 #light button:hover{
-    background-color:rgb(240, 98, 98);
+    background-color:rgb(227, 156, 255);
+    color:azure;
+}
+
+#dark button:hover{
+    background-color:rgb(227, 156, 255);
     color:azure;
 }
 
@@ -108,6 +124,14 @@ li {
 }
 
 .delete-button:hover{
+    background-color:rgb(240, 98, 98)
+}
+
+#light .delete-button:hover{
+    background-color:rgb(240, 98, 98)
+}
+
+#dark .delete-button:hover{
     background-color:rgb(240, 98, 98)
 }
 
