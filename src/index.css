@@ -1,21 +1,35 @@
-#light {
+#light div {
     background-color: rgb(219, 173, 230);
 }
 
-#dark {
+#dark div {
     background-color:rgb(44, 37, 78);
 }
 
-body{
-    /* background-color:rgb(35, 33, 43); */
-    background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
+#dark body {
+    background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175))
+}
+
+#light body {
+    background-image: linear-gradient(to top left, rgb(245, 165, 231), rgb(231, 218, 255))
+}
+
+.light-dark{
+    padding: 0% 0% 0% 46%;
+    border-radius: 20px;
+
+}
+
+ body{
     width: 100%;
     min-height: 100dvh;
     margin: 0px;
-}
+} 
 
 #root {
-    padding: 10% 20% 20% 20%;
+    padding: 0% 0% 0% 0%;
+    border-radius: 20px;
+    margin: 15%
 }
 
 h1{
@@ -50,15 +64,20 @@ ul {
     padding-inline-start: 0px;
 }
 
-#light ul {
+#light ul{
     color: rgb(125, 99, 221);
 }
 
-div {
-    text-align:center;
-    background-color: none;
-    border-radius: 20px;
+#dark ul{
+    color:azure;
 }
+
+.todo-list {
+    text-align:center;
+    background-color: aqua;
+    margin: 10% 10% 0% 10%
+}
+
 
 button {
     background-color:rgb(204, 196, 255);
@@ -80,8 +99,8 @@ button:hover{
 }
 
 #light button:hover{
-    background-color: rgb(172, 153, 238);
-    color:azure
+    background-color:rgb(240, 98, 98);
+    color:azure;
 }
 
 li {

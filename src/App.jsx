@@ -29,6 +29,10 @@ export default function App() {
   }, [todos])
   //every time our todos change, we want to run this to save the values
 
+  useEffect(() => {
+   document.documentElement.setAttribute("id", theme);
+}, [theme]);
+
   function toggleTodo(id, completed) {
     setTodos(currentTodos => {
       return currentTodos.map(todo => {
@@ -60,12 +64,12 @@ export default function App() {
   //onSubmit={addTodo} is a prop
   return (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <div id={theme}>
-    <h1 className="header">ToDo List</h1>
-    <NewTodoForm onSubmit={addTodo} />
-    <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+    <div class="todo-list">
+      <h1>ToDo List</h1>
+        <NewTodoForm onSubmit={addTodo} />
+        <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
-    <div class="switch">
+    <div class="light-dark">
     <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
     </div>
     </ThemeContext.Provider>
