@@ -1,20 +1,21 @@
-html {
-  --primaryBackgroundColor: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
-  --primaryTextColor: azure;
+#light {
+    background-color: rgb(219, 173, 230);
 }
 
-@media (prefers-color-scheme: light){
-    
-    body{
-        background-image: linear-gradient(to top left, rgb(218, 211, 255), rgb(121, 102, 226));
-    }
+#dark {
+    background-color:rgb(44, 37, 78);
 }
 
-
-body {
+body{
     /* background-color:rgb(35, 33, 43); */
     background-image: linear-gradient(to top left, rgb(15, 10, 43), rgb(104, 91, 175));
-    margin: 30%;
+    width: 100%;
+    min-height: 100dvh;
+    margin: 0px;
+}
+
+#root {
+    padding: 10% 20% 20% 20%;
 }
 
 h1{
@@ -26,11 +27,19 @@ h1{
     color:azure;
 }
 
+#light h1{
+    color: rgb(125, 99, 221);
+}
+
 label {
     font-family: Quicksand;
     text-align:center;
     padding: 15px;
     color:azure;
+}
+
+#light label {
+    color: rgb(125, 99, 221);
 }
 
 ul {
@@ -41,9 +50,13 @@ ul {
     padding-inline-start: 0px;
 }
 
+#light ul {
+    color: rgb(125, 99, 221);
+}
+
 div {
     text-align:center;
-    background-color: rgb(98, 89, 139);
+    background-color: none;
     border-radius: 20px;
 }
 
@@ -59,6 +72,16 @@ button {
 
 button:hover{
     background-color: rgb(222, 222, 255);
+}
+
+#light button{
+    background-color: rgb(125, 99, 221);
+    color:azure
+}
+
+#light button:hover{
+    background-color: rgb(172, 153, 238);
+    color:azure
 }
 
 li {

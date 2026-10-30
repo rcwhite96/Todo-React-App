@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react"
 import { NewTodoForm } from "./NewTodoForm"
 import { TodoList } from "./TodoList"
+import { createContext } from "react";
+import ReactSwitch from "react-switch";
+
+export const ThemeContext = createContext(null);
+
 
 export default function App() {
+
+  const [theme, setTheme] = useState("light")
+  
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark": "light"))
+  }
+
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null) return []
@@ -47,10 +59,15 @@ export default function App() {
   //Use keys if you need to edit or delete an item, react needs to know which one to change
   //onSubmit={addTodo} is a prop
   return (
-    <>
+    <ThemeContext.Provider value={{theme, toggleTheme}}>
+    <div id={theme}>
     <h1 className="header">ToDo List</h1>
     <NewTodoForm onSubmit={addTodo} />
     <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-    </>
+    </div>
+    <div class="switch">
+    <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+    </div>
+    </ThemeContext.Provider>
   )
 }
