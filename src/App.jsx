@@ -6,7 +6,6 @@ import ReactSwitch from "react-switch";
 
 export const ThemeContext = createContext(null);
 
-
 export default function App() {
 
   const [theme, setTheme] = useState("light")
