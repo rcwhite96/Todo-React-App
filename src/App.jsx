@@ -30,7 +30,7 @@ export default function App() {
   //every time our todos change, we want to run this to save the values
 
   useEffect(() => {
-   document.documentElement.setAttribute("id", theme);
+    document.documentElement.setAttribute("id", theme);
 }, [theme]);
 
   function toggleTodo(id, completed) {
